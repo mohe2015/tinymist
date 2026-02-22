@@ -50,6 +50,8 @@ const CONFIG_ITEMS: &[&str] = &[
     "exportPdf",
     "exportTarget",
     "fontPaths",
+    "packagePath",
+    "packageCachePath",
     "formatterMode",
     "formatterPrintWidth",
     "formatterIndentSize",
@@ -355,6 +357,8 @@ impl Config {
         assign_config!(export_pdf := "exportPdf"?: TaskWhen);
         assign_config!(export_target := "exportTarget"?: ExportTarget);
         assign_config!(font_paths := "fontPaths"?: Vec<_>);
+        assign_config!(package_path := "packagePath"?: Option<String>);
+        assign_config!(package_cache_path := "packageCachePath"?: Option<String>);
         assign_config!(formatter_mode := "formatterMode"?: FormatterMode);
         assign_config!(formatter_print_width := "formatterPrintWidth"?: Option<u32>);
         assign_config!(formatter_indent_size := "formatterIndentSize"?: Option<u32>);
@@ -1262,6 +1266,8 @@ mod tests {
         test_good_config("exportPdf");
         test_good_config("exportTarget");
         test_good_config("fontPaths");
+        test_good_config("packagePath");
+        test_good_config("packageCachePath");
         test_good_config("formatterMode");
         test_good_config("formatterPrintWidth");
         test_good_config("formatterIndentSize");

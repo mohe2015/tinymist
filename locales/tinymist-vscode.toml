@@ -1223,6 +1223,14 @@ zh = "字体路径"
 en = "A list of file or directory path to fonts. Note: The configuration source in higher priority will **override** the configuration source in lower priority. The order of precedence is: Configuration `tinymist.fontPaths` > Configuration `tinymist.typstExtraArgs.fontPaths` > LSP's CLI Argument `--font-path` > The environment variable `TYPST_FONT_PATHS` (a path list separated by `;` (on Windows) or `:` (Otherwise)). Note: If the path to fonts is a relative path, it will be resolved based on the root directory. Note: In VSCode, you can use VSCode variables in the path, e.g. `${workspaceFolder}/fonts`."
 zh = "字体文件或目录路径列表。注意：优先级较高的配置源将**覆盖**优先级较低的配置源。优先级顺序为：配置 `tinymist.fontPaths` > 配置 `tinymist.typstExtraArgs.fontPaths` > LSP 的 CLI 参数 `--font-path` > 环境变量 `TYPST_FONT_PATHS`（由 `;`（在 Windows 上）或 `:`（其他情况）分隔的路径列表）。注意：如果字体路径是相对路径，它将基于根目录解析。注意：在 VSCode 中，您可以在路径中使用 VSCode 变量，例如 `${workspaceFolder}/fonts`。"
 
+[extension.tinymist.config.tinymist.TODO.title]
+en = "Font Paths"
+zh = "字体路径"
+
+[extension.tinymist.config.tinymist.TODO.desc]
+en = "A list of file or directory path to fonts. Note: The configuration source in higher priority will **override** the configuration source in lower priority. The order of precedence is: Configuration `tinymist.fontPaths` > Configuration `tinymist.typstExtraArgs.fontPaths` > LSP's CLI Argument `--font-path` > The environment variable `TYPST_FONT_PATHS` (a path list separated by `;` (on Windows) or `:` (Otherwise)). Note: If the path to fonts is a relative path, it will be resolved based on the root directory. Note: In VSCode, you can use VSCode variables in the path, e.g. `${workspaceFolder}/fonts`."
+zh = "字体文件或目录路径列表。注意：优先级较高的配置源将**覆盖**优先级较低的配置源。优先级顺序为：配置 `tinymist.fontPaths` > 配置 `tinymist.typstExtraArgs.fontPaths` > LSP 的 CLI 参数 `--font-path` > 环境变量 `TYPST_FONT_PATHS`（由 `;`（在 Windows 上）或 `:`（其他情况）分隔的路径列表）。注意：如果字体路径是相对路径，它将基于根目录解析。注意：在 VSCode 中，您可以在路径中使用 VSCode 变量，例如 `${workspaceFolder}/fonts`。"
+
 [extension.tinymist.config.tinymist.compileStatus.title]
 en = "Compile Status"
 zh = "编译状态"

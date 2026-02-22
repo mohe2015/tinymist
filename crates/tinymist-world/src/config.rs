@@ -28,6 +28,14 @@ pub struct CompileOpts {
     #[serde(rename = "fontPaths")]
     pub font_paths: Vec<PathBuf>,
 
+    /// Custom path to local packages, defaults to system-dependent location
+    #[serde(rename = "packagePath")]
+    pub package_path: String,
+
+    /// Custom path to package cache, defaults to system-dependent location
+    #[serde(rename = "packageCachePath")]
+    pub package_cache_path: String,
+
     /// Whether to exclude system font paths.
     #[serde(rename = "noSystemFonts")]
     pub no_system_fonts: bool,

@@ -159,6 +159,16 @@
           "default": [],
           "description": "List of *additional* paths to font assets used by typst-preview."
         },
+        "typst-preview.packagePath": {
+          "type": "string",
+          "default": null,
+          "description": "Custom path to local packages, defaults to system-dependent location"
+        },
+        "typst-preview.packageCachePath": {
+          "type": "string",
+          "default": null,
+          "description": "Custom path to package cache, defaults to system-dependent location"
+        },
         "typst-preview.refresh": {
           "title": "Refresh preview",
           "description": "Refresh preview when the document is saved or when the document is changed",

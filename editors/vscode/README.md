@@ -220,6 +220,8 @@ Supported arguments:
   - This is used to specify the **default** entry file for the compiler, which may be overridden by other settings.
 - `--input`: Add a string key-value pair visible through `sys.inputs`.
 - `--font-path` (environment variable: `TYPST_FONT_PATHS`), Font paths, maybe overridden by `tinymist.fontPaths`.
+- `--TODO` (environment variable: `TYPST_FONT_PATHS`), Font paths, maybe overridden by `tinymist.fontPaths`.
+- `--TODO` (environment variable: `TYPST_FONT_PATHS`), Font paths, maybe overridden by `tinymist.fontPaths`.
 - `--ignore-system-fonts`: Ensures system fonts won’t be searched, maybe overridden by `tinymist.systemFonts`.
 - `--creation-timestamp` (environment variable: `SOURCE_DATE_EPOCH`): The document’s creation date formatted as a [UNIX timestamp](https://reproducible-builds.org/specs/source-date-epoch/).
 - `--cert` (environment variable: `TYPST_CERT`): Path to CA certificate file for network access, especially for downloading typst packages.

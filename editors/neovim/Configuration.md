@@ -86,6 +86,18 @@ A list of file or directory path to fonts. Note: The configuration source in hig
 
 - **Type**: array | null
 
+## `tinymist.TODO`
+
+A list of file or directory path to fonts. Note: The configuration source in higher priority will **override** the configuration source in lower priority. The order of precedence is: Configuration `tinymist.fontPaths` \> Configuration `tinymist.typstExtraArgs.fontPaths` \> LSP’s CLI Argument `--font-path` \> The environment variable `TYPST_FONT_PATHS` (a path list separated by `;` (on Windows) or `:` (Otherwise)). Note: If the path to fonts is a relative path, it will be resolved based on the root directory. Note: In VSCode, you can use VSCode variables in the path, e.g. `${workspaceFolder}/fonts`.
+
+- **Type**: string
+
+## `tinymist.TODO`
+
+A list of file or directory path to fonts. Note: The configuration source in higher priority will **override** the configuration source in lower priority. The order of precedence is: Configuration `tinymist.fontPaths` \> Configuration `tinymist.typstExtraArgs.fontPaths` \> LSP’s CLI Argument `--font-path` \> The environment variable `TYPST_FONT_PATHS` (a path list separated by `;` (on Windows) or `:` (Otherwise)). Note: If the path to fonts is a relative path, it will be resolved based on the root directory. Note: In VSCode, you can use VSCode variables in the path, e.g. `${workspaceFolder}/fonts`.
+
+- **Type**: string
+
 ## `formatterIndentSize`
 
 Sets the indent size (using space) for the formatter.

@@ -405,6 +405,8 @@ export const launchPreviewCompat = async (task: LaunchInBrowserTask | LaunchInWe
         ...previewInSlideModeArgs,
         ...codeGetCliInputArgs(),
         ...codeGetCliFontArgs(),
+        ...getCliPackagePathArgs(),
+        ...getCliPackageCachePathArgs(),
         filePath,
       ],
       outputChannel!,
@@ -456,6 +458,22 @@ export function codeGetCliInputArgs(): string[] {
 
 export function getCliFontPathArgs(fontPaths?: string[]): string[] {
   return (fontPaths ?? []).flatMap((fontPath) => ["--font-path", vscodeVariables(fontPath)]);
+}
+
+export function getCliPackagePathArgs(): string[] {
+  const packagePath = vscode.workspace.getConfiguration().get<string>("typst-preview.packagePath")
+  if (!packagePath) {
+    return [];
+  }
+  return ["--package-path", vscodeVariables(packagePath)];
+}
+
+export function getCliPackageCachePathArgs(): string[] {
+  const packageCachePath = vscode.workspace.getConfiguration().get<string>("typst-preview.packageCachePath")
+  if (!packageCachePath) {
+    return [];
+  }
+  return ["--package-cache-path", vscodeVariables(packageCachePath)];
 }
 
 export function codeGetCliFontArgs(): string[] {

@@ -539,6 +539,16 @@
           ],
           "default": null
         },
+        "tinymist.packagePath": {
+          "type": "string",
+          "default": null,
+          "description": "Custom path to local packages, defaults to system-dependent location"
+        },
+        "tinymist.packageCachePath": {
+          "type": "string",
+          "default": null,
+          "description": "Custom path to package cache, defaults to system-dependent location"
+        },
         "tinymist.compileStatus": {
           "title": "%extension.tinymist.config.tinymist.compileStatus.title%",
           "markdownDescription": "%extension.tinymist.config.tinymist.compileStatus.desc%",
