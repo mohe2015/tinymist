@@ -135,6 +135,11 @@ pub struct Config {
     /// Whether to use system fonts.
     pub system_fonts: Option<bool>,
 
+    /// Custom path to local packages, defaults to system-dependent location
+    pub package_path: Option<PathBuf>,
+    /// Custom path to package cache, defaults to system-dependent location
+    pub package_cache_path: Option<PathBuf>,
+
     /// Computed watch access model based on configuration.
     pub watch_access_model: OnceLock<Derived<Arc<WatchAccessModel>>>,
     /// Computed access model based on configuration.
@@ -357,8 +362,8 @@ impl Config {
         assign_config!(export_pdf := "exportPdf"?: TaskWhen);
         assign_config!(export_target := "exportTarget"?: ExportTarget);
         assign_config!(font_paths := "fontPaths"?: Vec<_>);
-        assign_config!(package_path := "packagePath"?: Option<String>);
-        assign_config!(package_cache_path := "packageCachePath"?: Option<String>);
+        assign_config!(package_path := "packagePath"?: Option<PathBuf>);
+        assign_config!(package_cache_path := "packageCachePath"?: Option<PathBuf>);
         assign_config!(formatter_mode := "formatterMode"?: FormatterMode);
         assign_config!(formatter_print_width := "formatterPrintWidth"?: Option<u32>);
         assign_config!(formatter_indent_size := "formatterIndentSize"?: Option<u32>);
@@ -655,7 +660,7 @@ impl Config {
         if let Some(extras) = &self.typst_extra_args {
             return extras.package.clone();
         }
-        CompilePackageArgs::default()
+        CompilePackageArgs { package_path: self.package_path.clone(), package_cache_path: self.package_cache_path.clone() }
     }
 
     /// Determines the font resolver.
@@ -745,6 +750,8 @@ impl Config {
         CompilePackageArgs,
         Option<bool>,
         CompileFontArgs,
+        Option<PathBuf>,
+        Option<PathBuf>,
         Option<i64>,
         Option<Arc<Path>>,
     ) {
@@ -771,6 +778,8 @@ impl Config {
             // typst font
             self.system_fonts,
             self.font_opts(),
+            self.package_path.clone(),
+            self.package_cache_path.clone(),
             self.creation_timestamp(),
             // typst root
             self.entry_resolver
